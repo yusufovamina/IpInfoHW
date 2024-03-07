@@ -25,18 +25,19 @@ namespace IPInfoHW
         {
             InitializeComponent();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string url = urlTextBox.Text;
            
+
             try
             {
                 Uri uri = new Uri(url);
 
-                // Получение IP-адресов для данного домена
+               
                 IPAddress[] ipAddresses = Dns.GetHostAddresses(uri.Host);
 
-                // Вывод информации
                 resultTextBox.Text = $"URL: {url}\r\n";
                 resultTextBox.Text += $"IP Addresses:\r\n";
 
